@@ -1,0 +1,5 @@
+puppet-module-edestecd-clamav (0.2.1) unstable; urgency=low
+
+  * Initial release.
+
+ -- Patrick Schoenfeld <patrick.schoenfeld@credativ.de>  Wed, 18 Mar 2015 14:35:26 +0100
