@@ -1,3 +1,9 @@
+puppet-module-edestecd-clamav (0.2.1.1) unstable; urgency=medium
+
+  * Fix install path
+
+ -- Patrick Schoenfeld <patrick.schoenfeld@credativ.de>  Wed, 18 Mar 2015 15:07:47 +0100
+
 puppet-module-edestecd-clamav (0.2.1) unstable; urgency=low
 
   * Initial release.
