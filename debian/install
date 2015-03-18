@@ -1,6 +1,6 @@
-manifests   usr/share/puppet/modules.available/edestecd-clamav
-templates   usr/share/puppet/modules.available/edestecd-clamav
-Rakefile    usr/share/puppet/modules.available/edestecd-clamav
-Gemfile     usr/share/puppet/modules.available/edestecd-clamav
+manifests   usr/share/puppet/modules.available/clamav
+templates   usr/share/puppet/modules.available/clamav
+Rakefile    usr/share/puppet/modules.available/clamav
+Gemfile     usr/share/puppet/modules.available/clamav
 LICENSE     usr/share/doc/puppet-module-edestecd-clamav
 README*     usr/share/doc/puppet-module-edestecd-clamav
