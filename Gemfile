@@ -1,23 +1,24 @@
 source 'https://rubygems.org'
 
-ruby '2.1.2', :engine => 'ruby', :engine_version => '2.1.2', :patchlevel => '95'
-#ruby=ruby-2.1.2
-#ruby-gemset=puppet-clamav
+puppetversion = ENV.key?('PUPPET_VERSION') ? "#{ENV['PUPPET_VERSION']}" : ['~> 3.7.2']
 
-gem 'facter'
-gem 'hiera'
-gem 'puppet'
 
-# Bundle edge puppet instead:
-# gem 'puppet', :git => 'git://github.com/puppetlabs/puppet.git'
-
-group :development, :test do
-  gem 'rake',                   :require => false
-  #gem 'rspec-puppet',           :require => false
-  #gem 'puppetlabs_spec_helper', :require => false
-  #gem 'serverspec',             :require => false
-  gem 'puppet-lint', '1.0.1',   :require => false
-  #gem 'puppet-blacksmith',      :require => false
-  #gem 'beaker',                 :require => false
-  #gem 'beaker-rspec',           :require => false
+group :ci, :unit_tests, :development do
+	gem 'rake'
+	gem 'puppet', puppetversion
+	gem 'puppetlabs_spec_helper', '>= 0.8.2'
+	# newer versions have a bug that cause ignore patterns not to work
+	# http://stackoverflow.com/questions/27138893/puppet-lint-ignoring-the-ignore-paths-option
+	gem 'puppet-lint', '~> 1.0.1'
+	gem 'metadata-json-lint'
+	gem 'facter', '~> 1.6.10'
+	gem 'hiera', '~> 1.3.4'
+    gem 'rspec_junit_formatter'
+    gem 'nokogiri'
 end
+
+group :system_tests do
+	gem 'beaker', :git => 'https://github.com/aptituz/beaker.git', :branch => 'install_spec_fixtures'
+	gem 'beaker-rspec'
+end
+
